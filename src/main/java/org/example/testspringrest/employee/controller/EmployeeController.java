@@ -14,9 +14,6 @@ import java.util.List;
 @RequestMapping("/api/employee")
 public class EmployeeController {
 
-    @Value("${custom.prop}")
-    private String customProperty;
-
     @GetMapping
     public List<Employee> findAll() {
         // Create a list of Employee objects
@@ -26,10 +23,6 @@ public class EmployeeController {
         employees.add(new Employee(1L, "John", "Doe", LocalDate.of(1980, 1, 1)));
         employees.add(new Employee(2L, "Jane", "Smith", LocalDate.of(1990, 2, 2)));
         employees.add(new Employee(3L, "Jim", "Brown", LocalDate.of(1985, 3, 3)));
-
-        // Print the list of employees
-        System.out.println("customProperty");
-        System.out.println(customProperty);
 
         return employees;
     }
